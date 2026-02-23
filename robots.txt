@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ramanramzan.github.io/jujutsu/sitemap.xml
