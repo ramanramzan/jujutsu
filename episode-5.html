@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO الحلقة الخامسة -->
+    <title>مشاهدة أنمي جوجوتسو كايسن الموسم الثالث الحلقة 5 مترجمة HD | شغف</title>
+    <meta name="description" content="شاهد الآن الحلقة 5 من أنمي جوجوتسو كايسن الموسم الثالث مترجمة عربي بجودة عالية HD. عنوان الحلقة: شغف. تابع تطورات آرك لعبة الإبادة الملحمي.">
+    
+    <!-- إعلاناتك -->
+    <script src="https://pl28779813.effectivegatecpm.com/4a/b8/3b/4ab83b3645c204091795fb2dfcc7bb13.js"></script>
+
+    <!-- مكتبات التشغيل -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Tajawal', sans-serif; background-color: #050505; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .player-container { border-radius: 1.5rem; overflow: hidden; background: #000; box-shadow: 0 20px 50px rgba(147, 51, 234, 0.3); aspect-ratio: 16/9; position: relative; }
+        iframe, video { width: 100%; height: 100%; border: none; }
+        .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); cursor: pointer; z-index: 20; transition: 0.3s; }
+        .play-button-center { width: 80px; height: 80px; background: #9333ea; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(147, 51, 234, 0.6); }
+        .play-overlay:hover .play-button-center { transform: scale(1.1); background: #a855f7; }
+        .server-btn { transition: all 0.3s; border: 1px solid rgba(255,255,255,0.1); }
+        .server-btn.active { background: #9333ea; box-shadow: 0 0 20px rgba(147, 51, 234, 0.5); border-color: #a855f7; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center font-black text-xl shadow-lg">J</div>
+            <span class="font-black text-xl tracking-tighter uppercase">جوجوتسو كايسن 3</span>
+        </a>
+    </nav>
+
+    <main class="pt-28 px-6 container mx-auto">
+        <nav class="flex items-center gap-2 text-gray-500 mb-6 text-sm font-bold">
+            <a href="index.html" class="hover:text-white">الرئيسية</a>
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            <span class="text-purple-500 font-black">الحلقة 5</span>
+        </nav>
+
+        <div class="max-w-5xl mx-auto">
+            <!-- العنوان المطور للحلقة 5 -->
+            <div class="mb-8 text-right">
+                <h1 class="text-2xl md:text-4xl font-black leading-tight mb-2">
+                    أنمي <span class="text-purple-500">جوجوتسو كايسن</span> الموسم الثالث الحلقة 5 مترجمة HD
+                </h1>
+                <p class="text-gray-400 font-bold flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-purple-500"></i> عنوان الحلقة: شغف
+                </p>
+            </div>
+
+            <!-- حاوية المشغل -->
+            <div class="player-container mb-6" id="player-wrapper">
+                <div id="play-overlay" class="play-overlay" onclick="startVideo()">
+                    <div class="play-button-center">
+                        <i data-lucide="play" class="w-10 h-10 text-white fill-white ml-1"></i>
+                    </div>
+                </div>
+                <!-- مشغل VIP للحلقة 5 -->
+                <video id="hls-player" controls poster="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg"></video>
+                <iframe id="iframe-player" class="hidden" allowFullScreen></iframe>
+            </div>
+
+            <!-- أزرار السيرفرات (روابط الحلقة 5) -->
+            <div class="flex flex-wrap gap-3 mb-10 justify-center">
+                <button id="btn-vip" onclick="changeServer('vip', 'https://cdn.videas.fr/v-medias/s5/hlsv1/0e/f2/0ef27d9e-f399-4cf9-84d8-caa7b1eda7e2/playlist.m3u8')" class="server-btn active px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10 text-yellow-400">سيرفر VIP (سريع)</button>
+                <button id="btn-drive" onclick="changeServer('drive', 'https://drive.google.com/file/d/1wjo5p0qDEuSwZAeY7bp2vC8aBM-KXQrO/preview')" class="server-btn px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10">سيرفر Drive</button>
+                <button id="btn-mega" onclick="changeServer('mega', 'https://mega.nz/embed/21wS3AjL#DX6-6wCWqzVOzxrVmrq-lmUHDiFkqldxJs_3036cbTE')" class="server-btn px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10">سيرفر Mega</button>
+            </div>
+
+            <div class="glass p-8 rounded-[2.5rem] mb-10 text-right border-r-4 border-purple-600">
+                <h2 class="text-xl font-black mb-4 flex items-center gap-2">
+                    <i data-lucide="info" class="text-purple-500"></i> تفاصيل الحلقة الخامسة
+                </h2>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    في الحلقة الخامسة بعنوان "شغف"، يزداد التوتر مع تعمق الشخصيات في صراعاتها الداخلية وأهدافها داخل لعبة الإبادة. تظهر قوى جديدة وتتحطم تحالفات قديمة في سبيل النجاة. شاهد الحلقة الآن بأعلى جودة ممكنة.
+                </p>
+            </div>
+
+            <!-- أزرار التنقل -->
+            <div class="flex justify-between items-center mb-20">
+                <a href="episode-4.html" class="bg-white/5 border border-white/10 px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-all flex items-center gap-2">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i> الحلقة السابقة
+                </a>
+                <a href="episode-6.html" class="bg-purple-600 px-8 py-3 rounded-full font-black hover:bg-purple-700 transition-all shadow-lg shadow-purple-900/20 flex items-center gap-2">
+                    الحلقة التالية <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-10 border-t border-white/5 text-center text-gray-500 text-sm">
+        <p>© 2026 جوجوتسو كايسن - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const iframe = document.getElementById('iframe-player');
+        const video = document.getElementById('hls-player');
+        const overlay = document.getElementById('play-overlay');
+        let hls = null;
+
+        window.onload = () => {
+            changeServer('vip', 'https://cdn.videas.fr/v-medias/s5/hlsv1/0e/f2/0ef27d9e-f399-4cf9-84d8-caa7b1eda7e2/playlist.m3u8');
+        };
+
+        function startVideo() { video.play(); overlay.classList.add('hidden'); }
+
+        function changeServer(type, url) {
+            document.querySelectorAll('.server-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + type).classList.add('active');
+            if (type === 'vip') {
+                iframe.classList.add('hidden'); video.classList.remove('hidden'); overlay.classList.remove('hidden');
+                if (Hls.isSupported()) {
+                    if (hls) hls.destroy();
+                    hls = new Hls(); hls.loadSource(url); hls.attachMedia(video);
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) { video.src = url; }
+            } else {
+                video.classList.add('hidden'); overlay.classList.add('hidden'); iframe.classList.remove('hidden');
+                iframe.src = url; if (hls) hls.destroy();
+            }
+        }
+    </script>
+</body>
+</html>
