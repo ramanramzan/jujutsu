@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html id="html-tag" lang="ar" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مشاهدة جوجوتسو كايسن الموسم الثالث مترجم HD | Jujutsu Kaisen S3</title>
-    <meta name="description" id="meta-desc" content="شاهد حلقات أنمي جوجوتسو كايسن الموسم الثالث مترجم عربي بجودة عالية HD. تابع آرك لعبة الإبادة حصرياً مع سيرفرات سريعة Drive و Mega و VIP.">
+    <meta name="description" content="الموقع الرسمي لمشاهدة حلقات أنمي جوجوتسو كايسن الموسم الثالث مترجم عربي بجودة عالية HD. تابع آرك لعبة الإبادة حصرياً.">
     
-    <!-- كود الإعلان المضاف -->
+    <!-- إعلاناتك -->
     <script src="https://pl28779813.effectivegatecpm.com/4a/b8/3b/4ab83b3645c204091795fb2dfcc7bb13.js"></script>
 
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -14,32 +14,22 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Tajawal', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .hero-gradient { background: linear-gradient(to left, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.6) 100%); }
-        .player-container { border-radius: 1.5rem; overflow: hidden; background: #000; box-shadow: 0 20px 50px rgba(147, 51, 234, 0.3); position: relative; aspect-ratio: 16/9; }
-        iframe, video { width: 100%; height: 100%; border: none; }
-        .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); cursor: pointer; transition: all 0.3s; z-index: 10; }
-        .play-button-center { width: 80px; height: 80px; background: #9333ea; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(147, 51, 234, 0.5); transition: 0.3s; }
-        .play-overlay:hover .play-button-center { transform: scale(1.1); background: #a855f7; }
         .episode-card:hover img { transform: scale(1.05); }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #9333ea; border-radius: 10px; }
-        
-        .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: #9333ea; color: white; padding: 0.75rem 1.5rem; border-radius: 1rem; font-weight: bold; z-index: 100; box-shadow: 0 10px 25px rgba(147, 51, 234, 0.5); animation: slideUp 0.3s ease-out; }
-        @keyframes slideUp { from { bottom: -50px; opacity: 0; } to { bottom: 2rem; opacity: 1; } }
-        
         .hero-info-badge { background: rgba(147, 51, 234, 0.15); border: 1px solid rgba(147, 51, 234, 0.3); padding: 6px 14px; border-radius: 12px; font-size: 0.9rem; font-weight: bold; display: flex; align-items: center; gap: 8px; color: #e9d5ff; }
     </style>
 </head>
 <body>
     <div id="root"></div>
     <script type="text/babel">
-        const { useState, useEffect, useRef } = React;
+        const { useEffect } = React;
 
         const Icon = ({ name, size = 20, className = "" }) => {
             useEffect(() => { if (window.lucide) window.lucide.createIcons(); }, [name]);
@@ -48,207 +38,75 @@
 
         const MAIN_POSTER = "https://image2url.com/r2/default/images/1771956588722-e92e1c09-18b2-4109-8ee6-99c3f4649f3e.jpg";
         const THUMB_IMAGE = "https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg";
-        
-        const SEO_LONG_DESCRIPTION = `يعود أنمي جوجوتسو كايسن (Jujutsu Kaisen) في موسمه الثالث الملحمي ليأخذنا في رحلة مظلمة ومليئة بالإثارة والتشويق، حيث يقتبس هذا الموسم آرك 'لعبة الإبادة' (Culling Game) الشهير من المانجا الأصلية للكاتب جيجي أكوتامي. تبدأ الأحداث مباشرة بعد الكارثة التي هزت مدينة شيبويا، حيث تغيرت موازين القوى في عالم السحر تماماً وانهار النظام الذي كان يحمي البشر. يجد يوجي إيتادوري نفسه مطارداً ليس فقط من قبل اللعنات القوية، بل ومن قبل مجتمع السحرة نفسه الذي يسعى لتنفيذ حكم الإعدام بحقه تحت إشراف مباشر من الساحر الأسطوري يوتا أوكوتسو. في هذا الموسم، نشهد العودة المنتظرة ليوتا أوكوتسو، الساحر من الدرجة الخاصة، الذي يظهر بقوة مذهلة ودوافع غامضة تضع المشاهدين في حالة من الترقب المستمر. لعبة الإبادة ليست مجرد قتال عادي، بل هي طقس سحري معقد صممه كينجاكو لإجبار السحرة والناس العاديين على إبادة بعضهم البعض لجمع الطاقة الملعونة اللازمة لتحقيق أهدافه الشيطانية في دمج البشرية مع تينغين-ساما. يتميز الموسم الثالث بجودة إنتاجية استثنائية من استوديو MAPPA، حيث نشهد تطوراً ملحوظاً في التحريك وتصميم المعارك التي أصبحت أكثر استراتيجية وعنفاً وجمالية. يركز العمل على مفاهيم التضحية، الصداقة، والبحث عن المعنى في عالم يغرق في اليأس والظلام. مع ظهور شخصيات جديدة قوية ومؤثرة مثل هيرومي هيغوروما وكاشيمو هاجيمي، تتسع رقعة الأحداث لتشمل مناطق متعددة في اليابان تحولت إلى ساحات قتال دموية مغلقة. إن هذا الموسم هو ذروة الإبداع في تصنيف الشونين الحديث، حيث يكسر القواعد التقليدية ويقدم قصة ناضجة ومعقدة تجذب المشاهدين من جميع أنحاء العالم. تابعوا معنا كل حلقة من حلقات هذا الموسم المثير بجودة عالية HD، واستمتعوا بتجربة مشاهدة فريدة تجمع بين الدراما العميقة والأكشن الأسطوري الذي لا يتوقف. جوجوتسو كايسن الموسم الثالث هو بلا شك الحدث الأبرز في عالم الأنمي لعام 2026، وهو العمل الذي سيظل محفوراً في ذاكرة المحبين لسنوات طويلة بفضل حبكته المتقنة وشخصياته العميقة التي تعاني وتتطور في ظل أصعب الظروف.`;
+        const SEO_DESC = "يعود أنمي جوجوتسو كايسن (Jujutsu Kaisen) في موسمه الثالث الملحمي ليأخذنا في رحلة مظلمة ومليئة بالإثارة والتشويق، حيث يقتبس هذا الموسم آرك 'لعبة الإبادة' (Culling Game) الشهير من المانجا الأصلية للكاتب جيجي أكوتامي. تبدأ الأحداث مباشرة بعد الكارثة التي هزت مدينة شيبويا، حيث تغيرت موازين القوى في عالم السحر تماماً وانهار النظام الذي كان يحمي البشر. يجد يوجي إيتادوري نفسه مطارداً ليس فقط من قبل اللعنات القوية، بل ومن قبل مجتمع السحرة نفسه الذي يسعى لتنفيذ حكم الإعدام بحقه تحت إشراف مباشر من الساحر الأسطوري يوتا أوكوتسو.";
 
-        const EPISODES_DATA = [
-            { id: 1, title_ar: "تنفيذ الإعدام", drive: "https://drive.google.com/file/d/1y_YKD0vt4e9Lhrzoa89NKwLRyW5uYqxE/preview", mega: "https://mega.nz/file/fhxgUR5Q#14GnrhnkBZFJ7x5lxsb6EcYcJwawXUGeXDaOQL8cPqU", videas: "https://cdn.videas.fr/v-medias/s5/hlsv1/11/b2/11b2b7eb-89cd-4174-89ff-80dee978ce2f/playlist.m3u8" },
-            { id: 2, title_ar: "مرة أخرى", drive: "https://drive.google.com/file/d/1dgMLJ917ey0sy-UsZUJHruYGJUz6dLyr/preview", mega: "https://mega.nz/file/Ttw3wA5C#IhLCl2nyFtufZKjhtNKqOEwCwwxtxvl8pZLw9-_ftwM", videas: "https://cdn.videas.fr/v-medias/s5/hlsv1/36/3a/363a2108-ed18-4172-87a5-f4ccd56fc382/playlist.m3u8" },
-            { id: 3, title_ar: "حول لعبة الإبادة", drive: "https://drive.google.com/file/d/1bVGqzkRzxVBlpUvmcD5dYOVNr7fhwW2-/preview", mega: "https://mega.nz/file/O0RhBLhY#D5hfIdsrhk2A56Z0fRLXDgeZroWIM4IPE-OFXYZ36uY", videas: "https://cdn.videas.fr/v-medias/s5/hlsv1/c1/2c/c12c303d-577b-4061-a320-117b9852c1e5/playlist.m3u8" },
-            { id: 4, title_ar: "التحضير المثالي", drive: "https://drive.google.com/file/d/1Ia3ThXLuJHZF8Qy-oMy97UUwLDNRnFus/preview", mega: "https://mega.nz/file/LhhRBKDS#J31iUTgKNsRZq3XAKQl8-7m3opVgi6SRv7NDI8ZD6PA", videas: "https://cdn.videas.fr/v-medias/s5/hlsv1/f1/b4/f1b411f9-8502-4b5d-a5e7-a0c50cfe6637/playlist.m3u8" },
-            { id: 5, title_ar: "شغف", drive: "https://drive.google.com/file/d/1wjo5p0qDEuSwZAeY7bp2vC8aBM-KXQrO/preview", mega: "https://mega.nz/file/21wS3AjL#DX6-6wCWqzVOzxrVmrq-lmUHDiFkqldxJs_3036cbTE", videas: "https://cdn.videas.fr/v-medias/s5/hlsv1/0e/f2/0ef27d9e-f399-4cf9-84d8-caa7b1eda7e2/playlist.m3u8" },
-            { id: 6, title_ar: "تِرس", drive: "https://drive.google.com/file/d/1XtjwSRk6dBQs57ogNkRXWdotH2gAsFPf/preview", mega: "https://mega.nz/file/LlxHRBJJ#jVupxxierMzHMbqtwo3GnFfe3T06gCpkk_yR7YvTW1M", videas: "https://cdn.videas.fr/v-medias/s5/hlsv1/8a/fc/8afc00ee-8cdf-4c01-bff6-e1842619d6eb/playlist.m3u8" },
-            { id: 7, title_ar: "بداية لعبة الإبادة", drive: "https://drive.google.com/file/d/15lHeesfKgKkL4kTvzj23iPRxMS0T4-B3/preview", mega: "https://mega.nz/file/n4B2SDiL#0hiS79SyjjO8ZZeGSFw-EncUNyPJWF151ozU6sRvnd8", videas: "https://cdn.videas.fr/v-medias/s5/hlsv1/e3/ab/e3ab27d1-8214-4593-a0be-0eab7536e30c/playlist.m3u8" }
-        ];
-
-        const M3U8Player = ({ url }) => {
-            const videoRef = useRef(null);
-            const [isStarted, setIsStarted] = useState(false);
-            useEffect(() => {
-                const video = videoRef.current;
-                if (Hls.isSupported()) {
-                    const hls = new Hls();
-                    hls.loadSource(url);
-                    hls.attachMedia(video);
-                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.src = url;
-                }
-                setIsStarted(false);
-            }, [url]);
-            const handlePlay = () => { videoRef.current.play(); setIsStarted(true); };
-            return (
-                <div className="relative w-full h-full group">
-                    {!isStarted && (
-                        <div className="play-overlay" onClick={handlePlay}>
-                            <div className="play-button-center"><Icon name="play" size={40} className="text-white fill-white ml-2" /></div>
-                        </div>
-                    )}
-                    <video ref={videoRef} controls={isStarted} poster={THUMB_IMAGE} />
-                </div>
-            );
-        };
+        // بيانات الحلقات المتاحة حالياً
+        const ACTIVE_EPISODES = [1, 2, 3, 4, 5, 6, 7];
 
         function App() {
-            const [view, setView] = useState('home');
-            const [activeEp, setActiveEp] = useState(null);
-            const [server, setServer] = useState('drive');
-            const [showToast, setShowToast] = useState(false);
-
-            useEffect(() => {
-                if (view === 'home') {
-                    document.title = "مشاهدة جوجوتسو كايسن الموسم الثالث مترجم HD | Jujutsu Kaisen S3";
-                } else if (view === 'watch' && activeEp) {
-                    document.title = `مشاهدة حلقة ${activeEp.id} جوجوتسو كايسن الموسم 3 | ${activeEp.title_ar}`;
-                }
-            }, [view, activeEp]);
-
-            const handleShare = () => {
-                const currentUrl = window.location.href.length > 300 ? "https://jjk-season3.com" : window.location.href;
-                const fullShareText = `مشاهدة جوجوتسو كايسن الموسم 3 - حلقة ${activeEp.id}: ${activeEp.title_ar}\nالرابط: ${currentUrl}`;
-                const textArea = document.createElement("textarea");
-                textArea.value = fullShareText;
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    setShowToast(true);
-                    setTimeout(() => setShowToast(false), 3000);
-                } catch (err) {
-                    console.error('فشل النسخ', err);
-                }
-                document.body.removeChild(textArea);
-            };
-
-            const Nav = () => (
-                <nav className="fixed top-0 w-full z-[60] glass border-b border-white/5 px-6 py-4 flex justify-between items-center">
-                    <div className="flex items-center gap-3 cursor-pointer" onClick={() => setView('home')}>
-                        <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center font-black text-xl shadow-lg">J</div>
-                        <span className="font-black text-xl tracking-tighter uppercase">جوجوتسو كايسن 3</span>
-                    </div>
-                </nav>
-            );
-
-            if (view === 'home') return (
+            return (
                 <div className="rtl">
-                    <Nav />
-                    
+                    <nav className="fixed top-0 w-full z-[60] glass border-b border-white/5 px-6 py-4 flex justify-between items-center">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center font-black text-xl shadow-lg">J</div>
+                            <span className="font-black text-xl tracking-tighter uppercase">جوجوتسو كايسن 3</span>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
                     <div className="relative min-h-screen pt-24 pb-12 px-6 flex items-center">
                         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                            
-                            {/* Left Side: Information & Description */}
                             <div className="lg:col-span-7 order-2 lg:order-1 text-right">
                                 <h1 className="text-4xl md:text-6xl font-black mb-6 text-white leading-tight">جوجوتسو كايسن <span className="text-purple-500">الموسم الثالث</span></h1>
-                                
                                 <div className="flex flex-wrap gap-3 mb-8">
-                                    <div className="hero-info-badge"><Icon name="calendar" size={16} className="text-purple-400"/> 2026</div>
-                                    <div className="hero-info-badge"><Icon name="play-circle" size={16} className="text-purple-400"/> 26 حلقة</div>
-                                    <div className="hero-info-badge"><Icon name="alert-circle" size={16} className="text-purple-400"/> +17</div>
+                                    <div className="hero-info-badge"><Icon name="calendar" size={16}/> 2026</div>
+                                    <div className="hero-info-badge"><Icon name="play-circle" size={16}/> 26 حلقة</div>
+                                    <div className="hero-info-badge"><Icon name="alert-circle" size={16}/> +17</div>
                                     <div className="hero-info-badge"><Icon name="star" size={16} className="text-yellow-400 fill-yellow-400"/> 8.7 / 10</div>
-                                    <div className="hero-info-badge w-full md:w-auto"><Icon name="layers" size={16} className="text-purple-400"/> أكشن – خارق للطبيعة – مدرسي – شونين</div>
+                                    <div className="hero-info-badge w-full md:w-auto"><Icon name="layers" size={16}/> أكشن – خارق للطبيعة – شونين</div>
                                 </div>
-
                                 <div className="glass p-6 md:p-8 rounded-[2.5rem] border-r-4 border-purple-600 mb-8">
-                                    <p className="text-gray-200 leading-relaxed text-lg text-justify">
-                                        {SEO_LONG_DESCRIPTION}
-                                    </p>
+                                    <p className="text-gray-200 leading-relaxed text-lg text-justify">{SEO_DESC}</p>
                                 </div>
-
-                                <button 
-                                    onClick={() => document.getElementById('grid').scrollIntoView()} 
-                                    className="bg-purple-600 hover:bg-purple-700 px-12 py-5 rounded-full font-black text-xl transition-all shadow-xl shadow-purple-900/40 active:scale-95 flex items-center gap-3 mx-auto md:mx-0"
-                                >
+                                <button onClick={() => document.getElementById('grid').scrollIntoView()} className="bg-purple-600 hover:bg-purple-700 px-12 py-5 rounded-full font-black text-xl transition-all shadow-xl shadow-purple-900/40 flex items-center gap-3">
                                     ابدأ المشاهدة الآن <Icon name="play" fill="white" />
                                 </button>
                             </div>
-
-                            {/* Right Side: Poster Image */}
                             <div className="lg:col-span-5 order-1 lg:order-2">
-                                <div className="relative group">
-                                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                                    <div className="relative glass p-2 rounded-[3rem] overflow-hidden shadow-2xl">
-                                        <img 
-                                            src={MAIN_POSTER} 
-                                            alt="جوجوتسو كايسن الموسم الثالث - بوستر رسمي" 
-                                            className="w-full h-auto rounded-[2.5rem] object-cover shadow-2xl"
-                                        />
-                                    </div>
+                                <div className="relative glass p-2 rounded-[3rem] overflow-hidden shadow-2xl">
+                                    <img src={MAIN_POSTER} alt="Poster" className="w-full h-auto rounded-[2.5rem]" />
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
+                    {/* Episodes Grid */}
                     <section id="grid" className="container mx-auto px-6 py-20">
                         <h2 className="text-3xl font-black mb-10 border-r-4 border-purple-600 pr-4">قائمة حلقات الموسم الثالث</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {Array.from({ length: 26 }, (_, i) => {
-                                const ep = EPISODES_DATA.find(e => e.id === i + 1);
+                                const epId = i + 1;
+                                const isActive = ACTIVE_EPISODES.includes(epId);
                                 return (
-                                    <div key={i} onClick={() => ep && (setActiveEp(ep), setView('watch'), setServer('drive'))} className={`glass p-5 rounded-[2.5rem] transition-all group episode-card ${ep ? 'cursor-pointer hover:border-purple-500/50' : 'opacity-40 grayscale'}`}>
+                                    <a 
+                                        key={i} 
+                                        href={isActive ? `episode-${epId}.html` : "#"} 
+                                        className={`glass p-5 rounded-[2.5rem] transition-all group episode-card block ${isActive ? 'hover:border-purple-500/50' : 'opacity-40 grayscale pointer-events-none'}`}
+                                    >
                                         <div className="aspect-video rounded-3xl overflow-hidden mb-4 relative">
                                             <img src={THUMB_IMAGE} className="w-full h-full object-cover transition-transform" />
-                                            {ep && <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all"><Icon name="play" size={40} /></div>}
+                                            {isActive && <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all"><Icon name="play" size={40} /></div>}
                                         </div>
-                                        <h3 className="font-black text-lg">الحلقة {i + 1} {ep ? `: ${ep.title_ar}` : '(قريباً)'}</h3>
-                                    </div>
+                                        <h3 className="font-black text-lg">الحلقة {epId} {isActive ? "" : "(قريباً)"}</h3>
+                                    </a>
                                 );
                             })}
                         </div>
                     </section>
 
                     <footer className="py-10 border-t border-white/5 text-center text-gray-500 text-sm">
-                        <p className="mb-2">جميع الحقوق محفوظة © 2024</p>
-                        <div className="flex justify-center gap-4 opacity-50">
-                            <span>جوجوتسو كايسن الموسم الثالث</span> | <span>مشاهدة انمي مترجم</span> | <span>Jujutsu Kaisen S3 HD</span>
-                        </div>
+                        <p>© 2026 جميع الحقوق محفوظة</p>
                     </footer>
-                </div>
-            );
-
-            if (view === 'watch') return (
-                <div className="pt-24 px-6 container mx-auto rtl">
-                    <Nav />
-                    {showToast && <div className="toast flex items-center gap-2"><Icon name="check-circle" size={18}/> تم نسخ الرابط والمعلومات بنجاح!</div>}
-                    <button onClick={() => setView('home')} className="flex items-center gap-2 text-gray-500 mb-6 font-black hover:text-purple-500 transition-colors">
-                        <Icon name="arrow-right" /> العودة للرئيسية
-                    </button>
-                    <div className="max-w-5xl mx-auto">
-                        <div className="player-container mb-6">
-                            {server === 'videas' ? (
-                                <M3U8Player url={activeEp.videas} />
-                            ) : (
-                                <iframe src={server === 'drive' ? activeEp.drive : activeEp.mega.replace("mega.nz/file/", "mega.nz/embed/")} allowFullScreen />
-                            )}
-                        </div>
-                        <div className="flex flex-wrap gap-3 mb-10 justify-center">
-                            <button onClick={() => setServer('drive')} className={`px-6 py-3 rounded-2xl font-bold transition-all ${server === 'drive' ? 'bg-purple-600 shadow-lg shadow-purple-900/40' : 'bg-white/5 border border-white/10 hover:bg-white/10'}`}>سيرفر Drive</button>
-                            <button onClick={() => setServer('mega')} className={`px-6 py-3 rounded-2xl font-bold transition-all ${server === 'mega' ? 'bg-purple-600 shadow-lg shadow-purple-900/40' : 'bg-white/5 border border-white/10 hover:bg-white/10'}`}>سيرفر Mega</button>
-                            {activeEp.videas && (
-                                <button onClick={() => setServer('videas')} className={`px-6 py-3 rounded-2xl font-bold transition-all ${server === 'videas' ? 'bg-purple-600 shadow-lg shadow-purple-900/40' : 'bg-white/5 border border-white/10 hover:bg-white/10'}`}>سيرفر VIP</button>
-                            )}
-                            <button onClick={handleShare} className="px-6 py-3 rounded-2xl font-bold bg-blue-600/20 border border-blue-500/30 text-blue-400 hover:bg-blue-600/30 flex items-center gap-2 transition-all active:scale-95">
-                                <Icon name="share-2" size={18} /> نسخ رابط الحلقة
-                            </button>
-                        </div>
-                        <div className="glass p-8 rounded-[2.5rem] mb-10 text-center md:text-right">
-                            <h1 className="text-3xl font-black mb-4">جوجوتسو كايسن الموسم 3 الحلقة {activeEp.id}: {activeEp.title_ar}</h1>
-                            <p className="text-gray-300 leading-relaxed text-lg">تابع أحداث آرك لعبة الإبادة المثير في الحلقة {activeEp.id} من أنمي جوجوتسو كايسن الموسم الثالث مترجم بجودة عالية.</p>
-                        </div>
-                        <div className="mb-20">
-                            <h2 className="text-2xl font-black mb-6 border-r-4 border-purple-600 pr-4">حلقات قد تهمك</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                                {EPISODES_DATA.filter(e => e.id !== activeEp.id).slice(0, 3).map((ep) => (
-                                    <div key={ep.id} onClick={() => {setActiveEp(ep); setServer('drive'); window.scrollTo(0, 0);}} className="glass p-4 rounded-[2rem] cursor-pointer hover:border-purple-500/50 transition-all group">
-                                        <div className="aspect-video rounded-2xl overflow-hidden mb-3 relative">
-                                            <img src={THUMB_IMAGE} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all"><Icon name="play" size={30} /></div>
-                                        </div>
-                                        <h3 className="font-bold text-sm">الحلقة {ep.id}: {ep.title_ar}</h3>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
                 </div>
             );
         }
