@@ -3,12 +3,12 @@
   <!-- الصفحة الرئيسية -->
   <url>
     <loc>https://ramanramzan.github.io/jujutsu/index.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- الحلقات السبع -->
+  <!-- حلقات الموسم الثالث المتاحة -->
   <url><loc>https://ramanramzan.github.io/jujutsu/episode-1.html</loc><priority>0.8</priority></url>
   <url><loc>https://ramanramzan.github.io/jujutsu/episode-2.html</loc><priority>0.8</priority></url>
   <url><loc>https://ramanramzan.github.io/jujutsu/episode-3.html</loc><priority>0.8</priority></url>
@@ -16,6 +16,7 @@
   <url><loc>https://ramanramzan.github.io/jujutsu/episode-5.html</loc><priority>0.8</priority></url>
   <url><loc>https://ramanramzan.github.io/jujutsu/episode-6.html</loc><priority>0.8</priority></url>
   <url><loc>https://ramanramzan.github.io/jujutsu/episode-7.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ramanramzan.github.io/jujutsu/episode-8.html</loc><priority>0.8</priority></url>
 
   <!-- الصفحات الإضافية -->
   <url><loc>https://ramanramzan.github.io/jujutsu/contact.html</loc><priority>0.5</priority></url>
