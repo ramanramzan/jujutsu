@@ -38,9 +38,10 @@
         const MAIN_POSTER = "https://image2url.com/r2/default/images/1771956588722-e92e1c09-18b2-4109-8ee6-99c3f4649f3e.jpg";
         const THUMB_IMAGE = "https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg";
         
+        // تم تحديث العناوين لتشمل الحلقة 8
         const EPISODES_TITLES = [
             "تنفيذ الإعدام", "مرة أخرى", "حول لعبة الإبادة", "التحضير المثالي", 
-            "شغف", "تِرس", "بداية لعبة الإبادة"
+            "شغف", "تِرس", "بداية لعبة الإبادة", "القتال المستعر"
         ];
 
         function App() {
@@ -97,7 +98,8 @@
                         <h2 className="text-3xl font-black mb-10 border-r-4 border-purple-600 pr-4">قائمة حلقات الموسم الثالث</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {Array.from({ length: 26 }, (_, i) => {
-                                const hasEpisode = i < 7;
+                                // تم تغيير الرقم هنا إلى 8 ليفتح الحلقة الثامنة
+                                const hasEpisode = i < 8;
                                 return (
                                     <div 
                                         key={i} 
@@ -121,7 +123,7 @@
                         </div>
                     </section>
 
-                    {/* Footer المحدث بالروابط */}
+                    {/* Footer */}
                     <footer className="py-12 border-t border-white/5 text-center">
                         <div className="flex flex-wrap justify-center gap-8 mb-6 text-gray-400 font-bold">
                             <a href="index.html" className="hover:text-purple-500 transition-colors">الرئيسية</a>
