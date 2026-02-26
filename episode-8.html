@@ -6,7 +6,7 @@
     
     <!-- SEO الحلقة الثامنة -->
     <title>مشاهدة أنمي جوجوتسو كايسن الموسم الثالث الحلقة 8 مترجمة HD | القتال المستعر</title>
-    <meta name="description" content="شاهد الآن الحلقة 8 من أنمي جوجوتسو كايسن الموسم الثالث مترجمة عربي بجودة عالية HD. احتدام القتال في لعبة الإبادة وظهور شخصيات جديدة.">
+    <meta name="description" content="شاهد الآن الحلقة 8 من أنمي جوجوتسو كايسن الموسم الثالث مترجمة عربي بجودة عالية HD. عنوان الحلقة: القتال المستعر. استمرار أحداث لعبة الإبادة المثيرة.">
     
     <!-- إعلاناتك -->
     <script src="https://pl28779813.effectivegatecpm.com/4a/b8/3b/4ab83b3645c204091795fb2dfcc7bb13.js"></script>
@@ -58,14 +58,21 @@
 
             <!-- حاوية المشغل -->
             <div class="player-container mb-6" id="player-wrapper">
-                <!-- مشغل Google Drive للحلقة 8 -->
-                <iframe id="iframe-player" src="https://drive.google.com/file/d/1x5t8I47d-NW1ohWS3eKRx0kGY8rqwASF/preview" allowFullScreen></iframe>
+                <div id="play-overlay" class="play-overlay" onclick="startVideo()">
+                    <div class="play-button-center">
+                        <i data-lucide="play" class="w-10 h-10 text-white fill-white ml-1"></i>
+                    </div>
+                </div>
+                <!-- مشغل VIP للحلقة 8 -->
+                <video id="hls-player" controls poster="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg"></video>
+                <iframe id="iframe-player" class="hidden" allowFullScreen></iframe>
             </div>
 
-            <!-- أزرار السيرفرات -->
+            <!-- أزرار السيرفرات (روابط الحلقة 8) -->
             <div class="flex flex-wrap gap-3 mb-10 justify-center">
-                <button id="btn-drive" class="server-btn active px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10 text-yellow-400">سيرفر Google Drive</button>
-                <button class="server-btn px-6 py-3 rounded-2xl font-bold bg-white/5 opacity-50 cursor-not-allowed">سيرفرات أخرى قريباً</button>
+                <button id="btn-vip" onclick="changeServer('vip', 'https://cdn.videas.fr/v-medias/s5/hlsv1/e6/d7/e6d719f4-d5b5-41b0-ba5d-8bb086cddaf2/playlist.m3u8')" class="server-btn active px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10 text-yellow-400">سيرفر VIP (سريع)</button>
+                <button id="btn-mega" onclick="changeServer('mega', 'https://mega.nz/embed/b1wi2CJD#KQcj4PtSx1Z4sjmKDorVIGsFYvEykFok9szv4vOPEtM')" class="server-btn px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10">سيرفر Mega</button>
+                <button id="btn-drive" onclick="changeServer('drive', 'https://docs.google.com/file/d/1vC6N55u7Y_r_t2rY92_938923/preview')" class="server-btn px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10">سيرفر Drive</button>
             </div>
 
             <div class="glass p-8 rounded-[2.5rem] mb-10 text-right border-r-4 border-purple-600">
@@ -73,7 +80,7 @@
                     <i data-lucide="info" class="text-purple-500"></i> تفاصيل الحلقة الثامنة
                 </h2>
                 <p class="text-gray-300 leading-relaxed text-lg">
-                    تستمر أحداث لعبة الإبادة في التصاعد، حيث يواجه أبطالنا تحديات غير مسبوقة ضد لاعبين من العصور القديمة. هل سيتمكن إيتادوري ورفاقه من الصمود؟ شاهد الحلقة الثامنة الآن بجودة كاملة.
+                    في الحلقة الثامنة بعنوان "القتال المستعر"، تشتعل وتيرة الأحداث داخل لعبة الإبادة. مواجهات غير متوقعة وقدرات مرعبة تظهر لأول مرة. هل سيتمكن السحرة من الصمود أمام القوانين الجديدة؟ شاهد الحلقة الآن بجودة عالية HD.
                 </p>
             </div>
 
@@ -95,6 +102,31 @@
 
     <script>
         lucide.createIcons();
+        const iframe = document.getElementById('iframe-player');
+        const video = document.getElementById('hls-player');
+        const overlay = document.getElementById('play-overlay');
+        let hls = null;
+
+        window.onload = () => {
+            changeServer('vip', 'https://cdn.videas.fr/v-medias/s5/hlsv1/e6/d7/e6d719f4-d5b5-41b0-ba5d-8bb086cddaf2/playlist.m3u8');
+        };
+
+        function startVideo() { video.play(); overlay.classList.add('hidden'); }
+
+        function changeServer(type, url) {
+            document.querySelectorAll('.server-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + type).classList.add('active');
+            if (type === 'vip') {
+                iframe.classList.add('hidden'); video.classList.remove('hidden'); overlay.classList.remove('hidden');
+                if (Hls.isSupported()) {
+                    if (hls) hls.destroy();
+                    hls = new Hls(); hls.loadSource(url); hls.attachMedia(video);
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) { video.src = url; }
+            } else {
+                video.classList.add('hidden'); overlay.classList.add('hidden'); iframe.classList.remove('hidden');
+                iframe.src = url; if (hls) hls.destroy();
+            }
+        }
     </script>
 </body>
 </html>
