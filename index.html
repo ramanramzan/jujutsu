@@ -23,6 +23,7 @@
         .episode-card:hover img { transform: scale(1.05); }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #9333ea; border-radius: 10px; }
+        .new-badge { position: absolute; top: 10px; left: 10px; background: #ef4444; color: white; padding: 2px 10px; border-radius: 8px; font-size: 12px; font-weight: 900; z-index: 20; }
     </style>
 </head>
 <body>
@@ -38,15 +39,21 @@
         const MAIN_POSTER = "https://image2url.com/r2/default/images/1771956588722-e92e1c09-18b2-4109-8ee6-99c3f4649f3e.jpg";
         const THUMB_IMAGE = "https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg";
         
-        // تحديث العناوين لتشمل الحلقة 10
+        // تحديث العناوين لتشمل الحلقة 11
         const EPISODES_TITLES = [
             "تنفيذ الإعدام", "مرة أخرى", "حول لعبة الإبادة", "التحضير المثالي", 
-            "شغف", "تِرس", "بداية لعبة الإبادة", "القتال المستعر", "استمرار الصراع", "الحلقة العاشرة"
+            "مستعمرة طوكيو رقم 1 الجزء 5 شغف", "تِرس", "بداية لعبة الإبادة", "القتال المستعر", 
+            "استمرار الصراع", "الحلقة العاشرة", "المواجهة الحاسمة"
         ];
 
         function App() {
             const handleEpisodeClick = (index) => {
-                window.location.href = `episode-${index + 1}.html`;
+                // توجيه خاص للحلقة الأولى بناءً على رابطك السابق، والباقي بنمط موحد
+                if(index === 0) {
+                    window.location.href = `1-hd-jujutsu-kaisen-s3-ep-1-body-font.html`;
+                } else {
+                    window.location.href = `episode-${index + 1}.html`;
+                }
             };
 
             return (
@@ -55,7 +62,7 @@
                     <nav className="fixed top-0 w-full z-[60] glass border-b border-white/5 px-6 py-4 flex justify-between items-center">
                         <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.location.href = 'index.html'}>
                             <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center font-black text-xl shadow-lg">J</div>
-                            <span class="font-black text-xl tracking-tighter uppercase">جوجوتسو كايسن 3</span>
+                            <span className="font-black text-xl tracking-tighter uppercase">جوجوتسو كايسن 3</span>
                         </div>
                     </nav>
                     
@@ -97,15 +104,16 @@
                     <section id="grid" className="container mx-auto px-6 py-20">
                         <h2 className="text-3xl font-black mb-10 border-r-4 border-purple-600 pr-4">قائمة حلقات الموسم الثالث</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {Array.from({ length: 10 }, (_, i) => {
-                                // تم تعديل الرقم هنا ليشمل الحلقة 10
+                            {Array.from({ length: 12 }, (_, i) => {
                                 const hasEpisode = i < EPISODES_TITLES.length;
+                                const isNew = i === 10; // الحلقة 11
                                 return (
                                     <div 
                                         key={i} 
                                         onClick={() => hasEpisode && handleEpisodeClick(i)} 
-                                        className={`glass p-5 rounded-[2.5rem] transition-all group episode-card ${hasEpisode ? 'cursor-pointer hover:border-purple-500/50' : 'opacity-40 grayscale cursor-not-allowed'}`}
+                                        className={`glass p-5 rounded-[2.5rem] transition-all group episode-card relative ${hasEpisode ? 'cursor-pointer hover:border-purple-500/50' : 'opacity-40 grayscale cursor-not-allowed'}`}
                                     >
+                                        {isNew && <div className="new-badge">جديد</div>}
                                         <div className="aspect-video rounded-3xl overflow-hidden mb-4 relative">
                                             <img src={THUMB_IMAGE} className="w-full h-full object-cover transition-transform" />
                                             {hasEpisode && (
