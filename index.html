@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- كود تحقق جوجل سيرش -->
+    <meta name="google-site-verification" content="2qCLbXpNeX09qGCtv_DXBhghIBJiEzGVcpFvR4_RxeI" />
+    
     <title>مشاهدة جوجوتسو كايسن الموسم الثالث مترجم HD | Jujutsu Kaisen S3</title>
     <meta name="description" content="شاهد حلقات أنمي جوجوتسو كايسن الموسم الثالث مترجم عربي بجودة عالية HD. تابع آرك لعبة الإبادة حصرياً مع سيرفرات سريعة Drive و Mega و VIP.">
 
@@ -39,7 +43,6 @@
         const MAIN_POSTER = "https://image2url.com/r2/default/images/1771956588722-e92e1c09-18b2-4109-8ee6-99c3f4649f3e.jpg";
         const THUMB_IMAGE = "https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg";
         
-        // تحديث العناوين لتشمل الحلقة 11
         const EPISODES_TITLES = [
             "تنفيذ الإعدام", "مرة أخرى", "حول لعبة الإبادة", "التحضير المثالي", 
             "مستعمرة طوكيو رقم 1 الجزء 5 شغف", "تِرس", "بداية لعبة الإبادة", "القتال المستعر", 
@@ -48,7 +51,6 @@
 
         function App() {
             const handleEpisodeClick = (index) => {
-                // توجيه خاص للحلقة الأولى بناءً على رابطك السابق، والباقي بنمط موحد
                 if(index === 0) {
                     window.location.href = `1-hd-jujutsu-kaisen-s3-ep-1-body-font.html`;
                 } else {
@@ -58,7 +60,6 @@
 
             return (
                 <div className="rtl">
-                    {/* Navbar */}
                     <nav className="fixed top-0 w-full z-[60] glass border-b border-white/5 px-6 py-4 flex justify-between items-center">
                         <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.location.href = 'index.html'}>
                             <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center font-black text-xl shadow-lg">J</div>
@@ -66,7 +67,6 @@
                         </div>
                     </nav>
                     
-                    {/* Hero Section */}
                     <div className="relative min-h-screen pt-24 pb-12 px-6 flex items-center">
                         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                             <div className="lg:col-span-7 order-2 lg:order-1 text-right">
@@ -100,13 +100,12 @@
                         </div>
                     </div>
 
-                    {/* Episodes Grid */}
                     <section id="grid" className="container mx-auto px-6 py-20">
                         <h2 className="text-3xl font-black mb-10 border-r-4 border-purple-600 pr-4">قائمة حلقات الموسم الثالث</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {Array.from({ length: 12 }, (_, i) => {
                                 const hasEpisode = i < EPISODES_TITLES.length;
-                                const isNew = i === 10; // الحلقة 11
+                                const isNew = i === 10;
                                 return (
                                     <div 
                                         key={i} 
@@ -131,7 +130,6 @@
                         </div>
                     </section>
 
-                    {/* Footer */}
                     <footer className="py-12 border-t border-white/5 text-center">
                         <div className="flex flex-wrap justify-center gap-8 mb-6 text-gray-400 font-bold">
                             <a href="index.html" className="hover:text-purple-500 transition-colors">الرئيسية</a>
