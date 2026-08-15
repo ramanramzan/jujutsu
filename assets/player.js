@@ -42,10 +42,27 @@
     const poster=video&&video.getAttribute('poster');
     const title=h1?h1.textContent.trim():`جوجوتسو كايسن الموسم الثالث الحلقة ${episode}`;
     const descriptionText=description?description.getAttribute('content')||title:title;
-    const data={'@context':'https://schema.org','@type':'VideoObject','name':title,'description':descriptionText,'thumbnailUrl':poster?[poster]:[],'uploadDate':releaseDates[episode]||'2026-01-08'};
+    const data={
+      '@context':'https://schema.org',
+      '@type':'VideoObject',
+      'name':title,
+      'description':descriptionText,
+      'thumbnailUrl':poster?[poster]:[],
+      'uploadDate':`${releaseDates[episode]||'2026-01-08'}T00:00:00+03:00`
+    };
     const defaultButton=root.querySelector('[data-default="true"]')||buttons[0];
-    if(defaultButton&&defaultButton.dataset.type==='iframe'&&defaultButton.dataset.url){data.embedUrl=defaultButton.dataset.url}
-    const script=document.createElement('script');script.type='application/ld+json';script.dataset.videoSchema='true';script.textContent=JSON.stringify(data);document.head.appendChild(script);
+    if(defaultButton&&defaultButton.dataset.url){
+      if(defaultButton.dataset.type==='iframe'){
+        data.embedUrl=defaultButton.dataset.url;
+      }else if(defaultButton.dataset.type==='hls'){
+        data.contentUrl=defaultButton.dataset.url;
+      }
+    }
+    const script=document.createElement('script');
+    script.type='application/ld+json';
+    script.dataset.videoSchema='true';
+    script.textContent=JSON.stringify(data);
+    document.head.appendChild(script);
   }
 
   function mediaReady(){setStatus('');}
