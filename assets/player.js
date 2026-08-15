@@ -34,13 +34,24 @@
     const script=document.createElement('script');script.type='application/ld+json';script.dataset.videoSchema='true';script.textContent=JSON.stringify(data);document.head.appendChild(script);
   }
 
+  function mediaReady(){setStatus('');}
+
+  function bindVideoReady(){
+    if(!video)return;
+    video.addEventListener('loadedmetadata',mediaReady,{once:true});
+    video.addEventListener('canplay',mediaReady,{once:true});
+    video.addEventListener('playing',mediaReady,{once:true});
+  }
+
   async function loadHls(url){
     clearError();
     showOnly('video');
     setStatus('جاري تجهيز السيرفر السريع…');
+    bindVideoReady();
     if(window.Hls&&window.Hls.isSupported()){
       destroyHls();
       hls=new window.Hls({enableWorker:true,lowLatencyMode:false});
+      hls.on(window.Hls.Events.MANIFEST_PARSED,mediaReady);
       hls.on(window.Hls.Events.ERROR,function(_e,data){
         if(data&&data.fatal){
           destroyHls();
@@ -52,7 +63,6 @@
       hls.on(window.Hls.Events.MEDIA_ATTACHED,function(){hls.loadSource(url)});
     }else if(video.canPlayType('application/vnd.apple.mpegurl')){
       video.src=url;
-      video.addEventListener('loadedmetadata',()=>setStatus('السيرفر السريع جاهز'),{once:true});
       video.addEventListener('error',()=>{showError('تعذر تشغيل السيرفر السريع. يمكنك تجربة سيرفر بديل.');setStatus('تعذر التشغيل')},{once:true});
     }else{
       showError('المتصفح الحالي لا يدعم هذا النوع من البث. جرّب Mega أو Drive.');
@@ -84,7 +94,7 @@
       video.removeAttribute('src');
       showOnly('iframe');
       iframe.src=url;
-      setStatus(`${btn.textContent.trim()} — جاهز للمشاهدة`);
+      setStatus('');
     }
   }
 
