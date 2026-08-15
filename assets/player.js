@@ -7,6 +7,7 @@
   const status=root.querySelector('[data-player-status]');
   const buttons=[...root.querySelectorAll('[data-server]')];
   let hls=null;
+  let fallbackUsed=false;
 
   const episodeMatch=location.pathname.match(/episode-(\d+)\.html$/);
   const episode=episodeMatch?Number(episodeMatch[1]):null;
@@ -16,12 +17,22 @@
   function showError(text){if(errorBox){errorBox.textContent=text;errorBox.classList.add('show')}}
   function clearError(){if(errorBox)errorBox.classList.remove('show')}
   function destroyHls(){if(hls){hls.destroy();hls=null}}
-
-  // Show exactly one player element. The HTML uses the hidden attribute,
-  // so toggling CSS display alone is not enough.
   function showOnly(kind){
     if(iframe){iframe.hidden=kind!=='iframe';}
     if(video){video.hidden=kind!=='video';}
+  }
+  function fallbackServer(){
+    if(fallbackUsed)return;
+    fallbackUsed=true;
+    const fallback=buttons.find(btn=>btn.dataset.type==='iframe');
+    if(fallback){
+      clearError();
+      setStatus('جاري فتح السيرفر البديل…');
+      useServer(fallback);
+    }else{
+      showError('تعذر تشغيل السيرفر السريع ولا يوجد سيرفر بديل متاح.');
+      setStatus('تعذر التشغيل');
+    }
   }
 
   function injectVideoSchema(){
@@ -38,7 +49,6 @@
   }
 
   function mediaReady(){setStatus('');}
-
   function bindVideoReady(){
     if(!video)return;
     video.addEventListener('loadedmetadata',mediaReady,{once:true});
@@ -46,10 +56,10 @@
     video.addEventListener('playing',mediaReady,{once:true});
   }
 
-  async function loadHls(url){
+  function loadHls(url){
     clearError();
     destroyHls();
-    if(iframe){iframe.src='';}
+    if(iframe)iframe.src='';
     showOnly('video');
     setStatus('جاري تجهيز السيرفر السريع…');
     bindVideoReady();
@@ -59,19 +69,35 @@
       hls.on(window.Hls.Events.ERROR,function(_e,data){
         if(data&&data.fatal){
           destroyHls();
-          showError('تعذر تشغيل السيرفر السريع. يمكنك تجربة Mega أو Drive من أسفل المشغل.');
-          setStatus('تعذر التشغيل');
+          fallbackServer();
         }
       });
       hls.attachMedia(video);
       hls.on(window.Hls.Events.MEDIA_ATTACHED,function(){hls.loadSource(url)});
     }else if(video.canPlayType('application/vnd.apple.mpegurl')){
       video.src=url;
-      video.addEventListener('error',()=>{showError('تعذر تشغيل السيرفر السريع. يمكنك تجربة سيرفر بديل.');setStatus('تعذر التشغيل')},{once:true});
+      video.addEventListener('error',()=>fallbackServer(),{once:true});
     }else{
-      showError('المتصفح الحالي لا يدعم هذا النوع من البث. جرّب Mega أو Drive.');
-      setStatus('تعذر التشغيل');
+      fallbackServer();
     }
+  }
+
+  function loadHlsLibraryThen(url){
+    showOnly('video');
+    setStatus('جاري تحميل المشغل…');
+    const existing=document.querySelector('script[data-hls-loader]');
+    if(existing){
+      existing.addEventListener('load',()=>loadHls(url),{once:true});
+      existing.addEventListener('error',fallbackServer,{once:true});
+      return;
+    }
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js';
+    s.async=true;
+    s.dataset.hlsLoader='true';
+    s.onload=()=>loadHls(url);
+    s.onerror=fallbackServer;
+    document.head.appendChild(s);
   }
 
   function useServer(btn){
@@ -82,16 +108,18 @@
     clearError();
 
     if(type==='hls'){
+      fallbackUsed=false;
       try{video.pause()}catch(_e){}
       video.removeAttribute('src');
-      loadHls(url);
+      if(window.Hls||video.canPlayType('application/vnd.apple.mpegurl'))loadHls(url);
+      else loadHlsLibraryThen(url);
       return;
     }
 
     destroyHls();
     try{video.pause()}catch(_e){}
     video.removeAttribute('src');
-    if(video)video.load();
+    video.load();
     showOnly('iframe');
     iframe.src=url;
     setStatus('');
@@ -99,7 +127,6 @@
 
   buttons.forEach(btn=>btn.addEventListener('click',()=>useServer(btn)));
 
-  // Starts with exactly one server: the one marked as default.
   const first=root.querySelector('[data-default="true"]')||buttons[0];
   if(first)useServer(first);
   injectVideoSchema();
