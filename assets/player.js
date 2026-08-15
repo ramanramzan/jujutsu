@@ -16,9 +16,12 @@
   function showError(text){if(errorBox){errorBox.textContent=text;errorBox.classList.add('show')}}
   function clearError(){if(errorBox)errorBox.classList.remove('show')}
   function destroyHls(){if(hls){hls.destroy();hls=null}}
+
+  // Show exactly one player element. The HTML uses the hidden attribute,
+  // so toggling CSS display alone is not enough.
   function showOnly(kind){
-    if(iframe) iframe.style.display=kind==='iframe'?'block':'none';
-    if(video) video.style.display=kind==='video'?'block':'none';
+    if(iframe){iframe.hidden=kind!=='iframe';}
+    if(video){video.hidden=kind!=='video';}
   }
 
   function injectVideoSchema(){
@@ -45,11 +48,12 @@
 
   async function loadHls(url){
     clearError();
+    destroyHls();
+    if(iframe){iframe.src='';}
     showOnly('video');
     setStatus('جاري تجهيز السيرفر السريع…');
     bindVideoReady();
     if(window.Hls&&window.Hls.isSupported()){
-      destroyHls();
       hls=new window.Hls({enableWorker:true,lowLatencyMode:false});
       hls.on(window.Hls.Events.MANIFEST_PARSED,mediaReady);
       hls.on(window.Hls.Events.ERROR,function(_e,data){
@@ -76,31 +80,26 @@
     if(!url)return;
     buttons.forEach(b=>b.classList.toggle('active',b===btn));
     clearError();
+
     if(type==='hls'){
-      if(window.Hls){loadHls(url)}
-      else{
-        showOnly('video');
-        setStatus('جاري تحميل المشغل…');
-        const s=document.createElement('script');
-        s.src='https://cdn.jsdelivr.net/npm/hls.js@latest';
-        s.async=true;
-        s.onload=()=>loadHls(url);
-        s.onerror=()=>{showError('تعذر تحميل مشغل الفيديو. جرّب سيرفرًا بديلًا.');setStatus('تعذر التشغيل')};
-        document.head.appendChild(s);
-      }
-    }else{
-      destroyHls();
       try{video.pause()}catch(_e){}
       video.removeAttribute('src');
-      showOnly('iframe');
-      iframe.src=url;
-      setStatus('');
+      loadHls(url);
+      return;
     }
+
+    destroyHls();
+    try{video.pause()}catch(_e){}
+    video.removeAttribute('src');
+    if(video)video.load();
+    showOnly('iframe');
+    iframe.src=url;
+    setStatus('');
   }
 
   buttons.forEach(btn=>btn.addEventListener('click',()=>useServer(btn)));
 
-  // يبدأ دائمًا بسيرفر واحد فقط: السيرفر السريع المحدد كـ default.
+  // Starts with exactly one server: the one marked as default.
   const first=root.querySelector('[data-default="true"]')||buttons[0];
   if(first)useServer(first);
   injectVideoSchema();
