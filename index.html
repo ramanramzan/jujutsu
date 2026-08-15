@@ -1,150 +1,38 @@
 <!DOCTYPE html>
-<html id="html-tag" lang="ar" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- كود تحقق جوجل سيرش -->
-    <meta name="google-site-verification" content="2qCLbXpNeX09qGCtv_DXBhghIBJiEzGVcpFvR4_RxeI" />
-    
-    <title>مشاهدة جوجوتسو كايسن الموسم الثالث مترجم HD | Jujutsu Kaisen S3</title>
-    <meta name="description" content="شاهد حلقات أنمي جوجوتسو كايسن الموسم الثالث مترجم عربي بجودة عالية HD. تابع آرك لعبة الإبادة حصرياً مع سيرفرات سريعة Drive و Mega و VIP.">
-
-    <!-- إعلاناتك -->
-    <script src="https://pl28779813.effectivegatecpm.com/4a/b8/3b/4ab83b3645c204091795fb2dfcc7bb13.js"></script>
-
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Tajawal', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .hero-info-badge { background: rgba(147, 51, 234, 0.15); border: 1px solid rgba(147, 51, 234, 0.3); padding: 6px 14px; border-radius: 12px; font-size: 0.9rem; font-weight: bold; display: flex; align-items: center; gap: 8px; color: #e9d5ff; }
-        .episode-card:hover img { transform: scale(1.05); }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #9333ea; border-radius: 10px; }
-        .new-badge { position: absolute; top: 10px; left: 10px; background: #ef4444; color: white; padding: 2px 10px; border-radius: 8px; font-size: 12px; font-weight: 900; z-index: 20; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="2qCLbXpNeX09qGCtv_DXBhghIBJiEzGVcpFvR4_RxeI">
+<title>مشاهدة جوجوتسو كايسن الموسم الثالث مترجم HD | Jujutsu Kaisen S3</title>
+<meta name="description" content="شاهد حلقات أنمي جوجوتسو كايسن الموسم الثالث مترجم عربي بجودة عالية HD. تابع الحلقات من 1 إلى 12.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Tajawal',sans-serif;background:#050505;color:#fff;scroll-behavior:smooth;overflow-x:hidden}.glass{background:rgba(255,255,255,.02);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.05)}.episode-card:hover img{transform:scale(1.05)}.badge{background:rgba(147,51,234,.15);border:1px solid rgba(147,51,234,.3);padding:6px 14px;border-radius:12px;font-weight:700;color:#e9d5ff}
+</style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        const { useEffect } = React;
-
-        const Icon = ({ name, size = 20, className = "" }) => {
-            useEffect(() => { if (window.lucide) window.lucide.createIcons(); }, [name]);
-            return <i data-lucide={name} className={className} style={{ width: size, height: size }}></i>;
-        };
-
-        const MAIN_POSTER = "https://image2url.com/r2/default/images/1771956588722-e92e1c09-18b2-4109-8ee6-99c3f4649f3e.jpg";
-        const THUMB_IMAGE = "https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg";
-        
-        // تم تحديث القائمة لتشمل الحلقة 12
-        const EPISODES_TITLES = [
-            "تنفيذ الإعدام", "مرة أخرى", "حول لعبة الإبادة", "التحضير المثالي", 
-            "مستعمرة طوكيو رقم 1 الجزء 5 شغف", "تِرس", "بداية لعبة الإبادة", "القتال المستعر", 
-            "استمرار الصراع", "الحلقة العاشرة", "المواجهة الحاسمة", "ختام لعبة الإبادة"
-        ];
-
-        function App() {
-            const handleEpisodeClick = (index) => {
-                if(index === 0) {
-                    window.location.href = `1-hd-jujutsu-kaisen-s3-ep-1-body-font.html`;
-                } else {
-                    window.location.href = `episode-${index + 1}.html`;
-                }
-            };
-
-            return (
-                <div className="rtl">
-                    <nav className="fixed top-0 w-full z-[60] glass border-b border-white/5 px-6 py-4 flex justify-between items-center">
-                        <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.location.href = 'index.html'}>
-                            <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center font-black text-xl shadow-lg">J</div>
-                            <span className="font-black text-xl tracking-tighter uppercase">جوجوتسو كايسن 3</span>
-                        </div>
-                    </nav>
-                    
-                    <div className="relative min-h-screen pt-24 pb-12 px-6 flex items-center">
-                        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                            <div className="lg:col-span-7 order-2 lg:order-1 text-right">
-                                <h1 className="text-4xl md:text-6xl font-black mb-6 text-white leading-tight">جوجوتسو كايسن <span className="text-purple-500">الموسم الثالث</span></h1>
-                                
-                                <div className="flex flex-wrap gap-3 mb-8">
-                                    <div className="hero-info-badge"><Icon name="calendar" size={16}/> 2026</div>
-                                    <div className="hero-info-badge"><Icon name="play-circle" size={16}/> 12 حلقة</div>
-                                    <div className="hero-info-badge"><Icon name="star" size={16} className="text-yellow-400 fill-yellow-400"/> 8.7 / 10</div>
-                                </div>
-
-                                <div className="glass p-6 md:p-8 rounded-[2.5rem] border-r-4 border-purple-600 mb-8">
-                                    <p className="text-gray-200 leading-relaxed text-lg text-justify">
-                                        يعود أنمي جوجوتسو كايسن في موسمه الثالث الملحمي ليقتبس آرك "لعبة الإبادة". تبدأ الأحداث بعد كارثة شيبويا، حيث يجد يوجي إيتادوري نفسه مطارداً في عالم انهار فيه النظام تماماً. استعد لمشاهدة أقوى المعارك والتحريك الأسطوري من استوديو MAPPA.
-                                    </p>
-                                </div>
-
-                                <button 
-                                    onClick={() => document.getElementById('grid').scrollIntoView()} 
-                                    className="bg-purple-600 hover:bg-purple-700 px-12 py-5 rounded-full font-black text-xl transition-all shadow-xl shadow-purple-900/40 active:scale-95 flex items-center gap-3 mx-auto md:mx-0"
-                                >
-                                    ابدأ المشاهدة الآن <Icon name="play" fill="white" />
-                                </button>
-                            </div>
-
-                            <div className="lg:col-span-5 order-1 lg:order-2">
-                                <div className="relative glass p-2 rounded-[3rem] overflow-hidden shadow-2xl">
-                                    <img src={MAIN_POSTER} className="w-full h-auto rounded-[2.5rem] object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <section id="grid" className="container mx-auto px-6 py-20">
-                        <h2 className="text-3xl font-black mb-10 border-r-4 border-purple-600 pr-4">قائمة حلقات الموسم الثالث</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {Array.from({ length: 12 }, (_, i) => {
-                                const hasEpisode = i < EPISODES_TITLES.length;
-                                const isNew = i === 11; // الحلقة 12 هي الجديدة الآن
-                                return (
-                                    <div 
-                                        key={i} 
-                                        onClick={() => hasEpisode && handleEpisodeClick(i)} 
-                                        className={`glass p-5 rounded-[2.5rem] transition-all group episode-card relative ${hasEpisode ? 'cursor-pointer hover:border-purple-500/50' : 'opacity-40 grayscale cursor-not-allowed'}`}
-                                    >
-                                        {isNew && <div className="new-badge">جديد</div>}
-                                        <div className="aspect-video rounded-3xl overflow-hidden mb-4 relative">
-                                            <img src={THUMB_IMAGE} className="w-full h-full object-cover transition-transform" />
-                                            {hasEpisode && (
-                                                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
-                                                    <Icon name="play" size={40} />
-                                                </div>
-                                            )}
-                                        </div>
-                                        <h3 className="font-black text-lg">
-                                            الحلقة {i + 1} {hasEpisode ? `: ${EPISODES_TITLES[i]}` : '(قريباً)'}
-                                        </h3>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </section>
-
-                    <footer className="py-12 border-t border-white/5 text-center">
-                        <div className="flex flex-wrap justify-center gap-8 mb-6 text-gray-400 font-bold">
-                            <a href="index.html" className="hover:text-purple-500 transition-colors">الرئيسية</a>
-                            <a href="contact.html" className="hover:text-purple-500 transition-colors">اتصل بنا</a>
-                            <a href="privacy.html" className="hover:text-purple-500 transition-colors">سياسة الخصوصية</a>
-                        </div>
-                        <p className="text-gray-500 text-sm">© 2026 جوجوتسو كايسن - جميع الحقوق محفوظة</p>
-                    </footer>
-                </div>
-            );
-        }
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+<nav class="fixed top-0 w-full z-50 glass px-6 py-4"><div class="container mx-auto flex items-center gap-3 font-black text-xl"><div class="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center">J</div>جوجوتسو كايسن 3</div></nav>
+<section class="min-h-screen pt-32 pb-16 px-6 flex items-center"><div class="container mx-auto grid lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 text-right"><h1 class="text-4xl md:text-6xl font-black mb-6">جوجوتسو كايسن <span class="text-purple-500">الموسم الثالث</span></h1><div class="flex flex-wrap gap-3 mb-8"><span class="badge">2026</span><span class="badge">12 حلقة</span><span class="badge">8.7 / 10</span></div><div class="glass p-7 rounded-[2.5rem] border-r-4 border-purple-600 mb-8"><p class="text-gray-200 leading-relaxed text-lg">تابع حلقات الموسم الثالث من جوجوتسو كايسن بجودة HD، مع صفحات مستقلة لكل حلقة وروابط مشاهدة متعددة.</p></div><a href="#grid" class="inline-flex bg-purple-600 hover:bg-purple-700 px-10 py-4 rounded-full font-black text-xl items-center gap-3">ابدأ المشاهدة <i data-lucide="play" class="w-6 h-6"></i></a></div>
+<div class="lg:col-span-5"><div class="glass p-2 rounded-[3rem]"><img src="https://image2url.com/r2/default/images/1771956588722-e92e1c09-18b2-4109-8ee6-99c3f4649f3e.jpg" class="w-full rounded-[2.5rem]" alt="جوجوتسو كايسن الموسم الثالث"></div></div></div></section>
+<section id="grid" class="container mx-auto px-6 py-20"><h2 class="text-3xl font-black mb-10 border-r-4 border-purple-600 pr-4">قائمة حلقات الموسم الثالث</h2><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<a href="episode-1.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 1"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 1: تنفيذ الإعدام</h3></a>
+<a href="episode-2.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 2"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 2: مرة أخرى</h3></a>
+<a href="episode-3.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 3"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 3: حول لعبة الإبادة</h3></a>
+<a href="episode-4.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 4"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 4: التحضير المثالي</h3></a>
+<a href="episode-5.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 5"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 5: شغف</h3></a>
+<a href="episode-6.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 6"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 6: تِرس</h3></a>
+<a href="episode-7.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 7"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 7: بداية لعبة الإبادة</h3></a>
+<a href="episode-8.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 8"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 8: القتال المستعر</h3></a>
+<a href="episode-9.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 9"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 9: استمرار الصراع</h3></a>
+<a href="episode-10.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 10"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 10</h3></a>
+<a href="episode-11.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 11"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 11: المواجهة الحاسمة</h3></a>
+<a href="episode-12.html" class="glass p-5 rounded-[2.5rem] group block hover:border-purple-500/50"><div class="aspect-video rounded-3xl overflow-hidden mb-4 relative"><img src="https://image2url.com/r2/default/images/1770912507115-3de26040-4759-489d-adfe-9046c6aaa78c.jpg" class="w-full h-full object-cover transition-transform" alt="الحلقة 12"><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"><i data-lucide="play" class="w-10 h-10"></i></div></div><h3 class="font-black text-lg">الحلقة 12: ختام لعبة الإبادة</h3></a>
+</div></section>
+<footer class="py-12 border-t border-white/5 text-center"><div class="flex justify-center gap-8 mb-6 text-gray-400 font-bold"><a href="contact.html">اتصل بنا</a><a href="privacy.html">سياسة الخصوصية</a></div><p class="text-gray-500 text-sm">© 2026 جوجوتسو كايسن - جميع الحقوق محفوظة</p></footer>
+<script>document.addEventListener('DOMContentLoaded',function(){if(window.lucide&&window.lucide.createIcons){window.lucide.createIcons();}});</script>
 </body>
 </html>
