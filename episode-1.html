@@ -3,26 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO الحلقة الثانية -->
-    <title>مشاهدة أنمي جوجوتسو كايسن الموسم الثالث الحلقة 2 مترجمة HD | Jujutsu Kaisen S3 Ep 2</title>
-    <meta name="description" content="شاهد الآن الحلقة 2 من أنمي جوجوتسو كايسن الموسم الثالث مترجمة عربي بجودة عالية HD. استكمال أحداث آرك لعبة الإبادة المثير.">
-    
-    <!-- إعلاناتك -->
-    <script src="https://pl28779813.effectivegatecpm.com/4a/b8/3b/4ab83b3645c204091795fb2dfcc7bb13.js"></script>
+    <title>مشاهدة أنمي جوجوتسو كايسن الموسم الثالث الحلقة 1 مترجمة HD | تنفيذ الإعدام</title>
+    <meta name="description" content="شاهد الآن الحلقة 1 من أنمي جوجوتسو كايسن الموسم الثالث مترجمة عربي بجودة عالية HD. عنوان الحلقة: تنفيذ الإعدام.">
 
-    <!-- مكتبات التشغيل -->
+    <script src="https://pl28779813.effectivegatecpm.com/4a/b8/3b/4ab83b3645c204091795fb2dfcc7bb13.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-    
+
     <style>
         body { font-family: 'Tajawal', sans-serif; background-color: #050505; color: white; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .player-container { border-radius: 1.5rem; overflow: hidden; background: #000; box-shadow: 0 20px 50px rgba(147, 51, 234, 0.3); aspect-ratio: 16/9; position: relative; }
         iframe, video { width: 100%; height: 100%; border: none; }
-        .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); cursor: pointer; z-index: 20; transition: 0.3s; }
+        .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); cursor: pointer; z-index: 20; }
         .play-button-center { width: 80px; height: 80px; background: #9333ea; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(147, 51, 234, 0.6); }
         .play-overlay:hover .play-button-center { transform: scale(1.1); background: #a855f7; }
         .server-btn { transition: all 0.3s; border: 1px solid rgba(255,255,255,0.1); }
@@ -42,21 +37,19 @@
         <nav class="flex items-center gap-2 text-gray-500 mb-6 text-sm font-bold">
             <a href="index.html" class="hover:text-white">الرئيسية</a>
             <i data-lucide="chevron-left" class="w-4 h-4"></i>
-            <span class="text-purple-500 font-black">الحلقة 2</span>
+            <span class="text-purple-500 font-black">الحلقة 1</span>
         </nav>
 
         <div class="max-w-5xl mx-auto">
-            <!-- العنوان المطور للحلقة 2 -->
             <div class="mb-8 text-right">
                 <h1 class="text-2xl md:text-4xl font-black leading-tight mb-2">
-                    أنمي <span class="text-purple-500">جوجوتسو كايسن</span> الموسم الثالث الحلقة 2 مترجمة HD
+                    أنمي <span class="text-purple-500">جوجوتسو كايسن</span> الموسم الثالث الحلقة 1 مترجمة HD
                 </h1>
                 <p class="text-gray-400 font-bold flex items-center gap-2">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-purple-500"></i> عنوان الحلقة: مرة أخرى
+                    <i data-lucide="sparkles" class="w-4 h-4 text-purple-500"></i> عنوان الحلقة: تنفيذ الإعدام
                 </p>
             </div>
 
-            <!-- حاوية المشغل -->
             <div class="player-container mb-6" id="player-wrapper">
                 <div id="play-overlay" class="play-overlay" onclick="startVideo()">
                     <div class="play-button-center">
@@ -67,28 +60,26 @@
                 <iframe id="iframe-player" class="hidden" allowFullScreen></iframe>
             </div>
 
-            <!-- أزرار السيرفرات (روابط الحلقة 2) -->
             <div class="flex flex-wrap gap-3 mb-10 justify-center">
-                <button id="btn-vip" onclick="changeServer('vip', 'https://cdn.videas.fr/v-medias/s5/hlsv1/36/3a/363a2108-ed18-4172-87a5-f4ccd56fc382/playlist.m3u8')" class="server-btn active px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10 text-yellow-400">سيرفر VIP (سريع)</button>
-                <button id="btn-drive" onclick="changeServer('drive', 'https://drive.google.com/file/d/1dgMLJ917ey0sy-UsZUJHruYGJUz6dLyr/preview')" class="server-btn px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10">سيرفر Drive</button>
-                <button id="btn-mega" onclick="changeServer('mega', 'https://mega.nz/embed/Ttw3wA5C#IhLCl2nyFtufZKjhtNKqOEwCwwxtxvl8pZLw9-_ftwM')" class="server-btn px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10">سيرفر Mega</button>
+                <button id="btn-vip" onclick="changeServer('vip', 'https://cdn.videas.fr/v-medias/s5/hlsv1/11/b2/11b2b7eb-89cd-4174-89ff-80dee978ce2f/playlist.m3u8')" class="server-btn active px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10 text-yellow-400">سيرفر VIP (سريع)</button>
+                <button id="btn-drive" onclick="changeServer('drive', 'https://drive.google.com/file/d/1y_YKD0vt4e9Lhrzoa89NKwLRyW5uYqxE/preview')" class="server-btn px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10">سيرفر Drive</button>
+                <button id="btn-mega" onclick="changeServer('mega', 'https://mega.nz/embed/fhxgUR5Q#14GnrhnkBZFJ7x5lxsb6EcYcJwawXUGeXDaOQL8cPqU')" class="server-btn px-6 py-3 rounded-2xl font-bold bg-white/5 hover:bg-white/10">سيرفر Mega</button>
             </div>
 
             <div class="glass p-8 rounded-[2.5rem] mb-10 text-right border-r-4 border-purple-600">
                 <h2 class="text-xl font-black mb-4 flex items-center gap-2">
-                    <i data-lucide="info" class="text-purple-500"></i> تفاصيل الحلقة الثانية
+                    <i data-lucide="info" class="text-purple-500"></i> تفاصيل الحلقة الأولى
                 </h2>
                 <p class="text-gray-300 leading-relaxed text-lg">
-                    تستمر الإثارة في الحلقة الثانية من جوجوتسو كايسن الموسم الثالث، حيث تتصاعد وتيرة الأحداث في لعبة الإبادة. يواجه يوجي ورفاقه تحديات جديدة ومواجهات غير متوقعة مع سحرة من عصور قديمة. شاهد الحلقة الآن بجودة عالية وبدون إعلانات مزعجة.
+                    تبدأ أحداث الموسم الثالث بتطورات ما بعد كارثة شيبويا، حيث يصبح يوجي إيتادوري هدفاً لحكم الإعدام وتبدأ مرحلة جديدة تمهد للعبة الإبادة. شاهد الحلقة الآن بجودة عالية.
                 </p>
             </div>
 
-            <!-- أزرار التنقل (الحلقة 2) -->
             <div class="flex justify-between items-center mb-20">
-                <a href="episode-1.html" class="bg-white/5 border border-white/10 px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-all flex items-center gap-2">
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i> الحلقة السابقة
+                <a href="index.html" class="bg-white/5 border border-white/10 px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-all flex items-center gap-2">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i> العودة للرئيسية
                 </a>
-                <a href="episode-3.html" class="bg-purple-600 px-8 py-3 rounded-full font-black hover:bg-purple-700 transition-all shadow-lg shadow-purple-900/20 flex items-center gap-2">
+                <a href="episode-2.html" class="bg-purple-600 px-8 py-3 rounded-full font-black hover:bg-purple-700 transition-all shadow-lg shadow-purple-900/20 flex items-center gap-2">
                     الحلقة التالية <i data-lucide="arrow-left" class="w-5 h-5"></i>
                 </a>
             </div>
@@ -107,23 +98,36 @@
         let hls = null;
 
         window.onload = () => {
-            changeServer('vip', 'https://cdn.videas.fr/v-medias/s5/hlsv1/36/3a/363a2108-ed18-4172-87a5-f4ccd56fc382/playlist.m3u8');
+            changeServer('vip', 'https://cdn.videas.fr/v-medias/s5/hlsv1/11/b2/11b2b7eb-89cd-4174-89ff-80dee978ce2f/playlist.m3u8');
         };
 
-        function startVideo() { video.play(); overlay.classList.add('hidden'); }
+        function startVideo() {
+            video.play().catch(() => {});
+            overlay.classList.add('hidden');
+        }
 
         function changeServer(type, url) {
             document.querySelectorAll('.server-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-' + type).classList.add('active');
             if (type === 'vip') {
-                iframe.classList.add('hidden'); video.classList.remove('hidden'); overlay.classList.remove('hidden');
+                iframe.classList.add('hidden');
+                video.classList.remove('hidden');
+                overlay.classList.remove('hidden');
                 if (Hls.isSupported()) {
                     if (hls) hls.destroy();
-                    hls = new Hls(); hls.loadSource(url); hls.attachMedia(video);
-                } else if (video.canPlayType('application/vnd.apple.mpegurl')) { video.src = url; }
+                    hls = new Hls();
+                    hls.loadSource(url);
+                    hls.attachMedia(video);
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    video.src = url;
+                }
             } else {
-                video.classList.add('hidden'); overlay.classList.add('hidden'); iframe.classList.remove('hidden');
-                iframe.src = url; if (hls) hls.destroy();
+                video.pause();
+                video.classList.add('hidden');
+                overlay.classList.add('hidden');
+                iframe.classList.remove('hidden');
+                iframe.src = url;
+                if (hls) { hls.destroy(); hls = null; }
             }
         }
     </script>
