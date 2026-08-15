@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# رابط الخريطة الصحيح لموقعك على GitHub
 Sitemap: https://ramanramzan.github.io/jujutsu/sitemap.xml
